@@ -8,6 +8,14 @@
       <span class="line"></span>
     </div>
   <% end %>
+  <%= title.upcase %>
+  <% if title == "Log In" %>
+    <%= link_to icon('fa-solid fa-user-plus'), new_user_registration_path %>
+  <% elsif title == "Sign Up" %>
+    <%= link_to "Log In", new_user_session_path, class: 'login' %>
+  <% else %>
+    <i class="fa-solid fa-right-from-bracket"></i>
+  <% end %>
 </header>
 
 <%= render 'shared/flash' %>
